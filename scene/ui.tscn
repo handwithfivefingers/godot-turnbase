@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://drwmuv87wfxr3"]
+
+[ext_resource type="Script" uid="uid://brfg585nug8hy" path="res://scripts/ui.gd" id="1_tdwok"]
+[ext_resource type="Script" uid="uid://bdanyldupckx2" path="res://scripts/label.gd" id="2_s2f8l"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tdwok")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.003
+anchor_bottom = 0.003
+offset_right = 10.08
+offset_bottom = 20.84
+clip_text = true
+script = ExtResource("2_s2f8l")
+metadata/Turn = 1
