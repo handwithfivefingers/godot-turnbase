@@ -1,19 +1,18 @@
-class_name Player extends Area2D 
+class_name Enemies extends Area2D
 
-@export var speed = 900
+@export var speed = 400
 @export var x = 0
 @export var y = 0
-
-var previousX
-var previousY
 var screen_size
 var timer = 0
+var previousX
+var previousY
 var currentPosition
 var newPos 
 var isAttack = false
 func _ready():
 	screen_size = get_viewport_rect().size
-	$AnimatedSprite2D.play("idle_right")
+	$AnimatedSprite2D.play("idle_left")
 	previousX = x
 	previousY = y
 	currentPosition = Vector2(x,y)
@@ -25,7 +24,7 @@ func _attack(pos):
 	$AnimatedSprite2D.stop()
 	x = pos.x
 	y = pos.y
-	$AnimatedSprite2D.play("attack")
+	$AnimatedSprite2D.play("attack_left")
 	print("timer",timer)
 	isAttack = true
 	
@@ -36,12 +35,8 @@ func _process(_delta: float) -> void:
 		position = position.move_toward(Vector2(x,y), _delta * speed)
 	else:
 		position = position.move_toward(Vector2(previousX,previousY), _delta * speed * 2)
-	if(isAttack && $AnimatedSprite2D.animation == 'attack' && timer >= 450):
+	if(isAttack && $AnimatedSprite2D.animation == 'attack_left' && timer >= 450):
 		print("callback")
-		$AnimatedSprite2D.play("idle_right")
+		$AnimatedSprite2D.play("idle_left")
 		isAttack = false
 		timer = 0
-
-
-func _moveTo(des):
-	position = position.move_toward(des, speed)

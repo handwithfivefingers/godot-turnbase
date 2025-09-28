@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://drwmuv87wfxr3"]
+[gd_scene load_steps=2 format=3 uid="uid://cn22v7oeg33kp"]
 
-[ext_resource type="Script" uid="uid://brfg585nug8hy" path="res://scripts/ui.gd" id="1_tdwok"]
-[ext_resource type="Script" uid="uid://bdanyldupckx2" path="res://scripts/label.gd" id="2_s2f8l"]
+[ext_resource type="Script" uid="uid://dmqnanbxjdp26" path="res://scripts/uiManager.gd" id="1_onfsl"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -10,15 +9,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tdwok")
+script = ExtResource("1_onfsl")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.003
-anchor_bottom = 0.003
-offset_right = 10.08
-offset_bottom = 20.84
-clip_text = true
-script = ExtResource("2_s2f8l")
-metadata/Turn = 1
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MessageTimer" type="Timer" parent="HUD"]
+
+[node name="Turn" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="StartButton" type="Button" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Next"
+
+[node name="Message" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 75.0
+offset_right = 148.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Your turn"
