@@ -1,25 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctnl3cod44sav"]
+[gd_scene load_steps=11 format=3 uid="uid://ctnl3cod44sav"]
 
 [ext_resource type="Script" uid="uid://cbtnhe5agafbf" path="res://scripts/game_manager.gd" id="1_3c3go"]
-[ext_resource type="PackedScene" uid="uid://cj1kfmbkuqhx4" path="res://scene/player.tscn" id="2_a81tu"]
+[ext_resource type="PackedScene" uid="uid://gnhtdtb3j4sy" path="res://scene/wrath_03.tscn" id="2_re6s4"]
+[ext_resource type="Script" uid="uid://c5sbml6bi3cc6" path="res://scripts/player_builder.gd" id="2_vknke"]
+[ext_resource type="PackedScene" uid="uid://uhvo12kl0j4o" path="res://scene/wrath_01.tscn" id="2_yyxvu"]
+[ext_resource type="PackedScene" uid="uid://d2iri64gubq8i" path="res://scene/wrath_02.tscn" id="3_05tyy"]
 [ext_resource type="Script" uid="uid://57a6i15hxohx" path="res://scripts/enemies.gd" id="3_hy1te"]
+[ext_resource type="Script" uid="uid://c747jyc5jky36" path="res://scripts/player.gd" id="3_vknke"]
 [ext_resource type="Script" uid="uid://dmqnanbxjdp26" path="res://scripts/uiManager.gd" id="4_8cna3"]
+[ext_resource type="Texture2D" uid="uid://c2vq0a7s4kueu" path="res://assets/background/bg.jpg" id="5_hy1te"]
+[ext_resource type="PackedScene" uid="uid://d2yb8g6ry6clx" path="res://scene/mobs/golem_01.tscn" id="8_re6s4"]
 
-[node name="GameManager" type="Node" node_paths=PackedStringArray("player_character", "ai_character")]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("ai_character", "playerBuilder")]
 script = ExtResource("1_3c3go")
-player_character = NodePath("Player")
-ai_character = NodePath("AI")
+ai_character = NodePath("MobBuilder/Golem01")
+playerBuilder = NodePath("PlayerBuilder")
 
-[node name="Player" parent="." instance=ExtResource("2_a81tu")]
-position = Vector2(198, 339)
-x = 200
-y = 200
+[node name="MobBuilder" type="Node" parent="."]
 
-[node name="AI" parent="." instance=ExtResource("2_a81tu")]
-position = Vector2(379, 334)
+[node name="Golem01" parent="MobBuilder" instance=ExtResource("8_re6s4")]
+position = Vector2(400, 480)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("3_hy1te")
 x = 400
-y = 200
+y = 480
+attackDmg = 120
+def = 6
+isEnemies = true
+
+[node name="PlayerBuilder" type="Node" parent="." node_paths=PackedStringArray("chars")]
+script = ExtResource("2_vknke")
+chars = [NodePath("Wrath01"), NodePath("Wrath02"), NodePath("Wrath03")]
+
+[node name="Wrath03" parent="PlayerBuilder" instance=ExtResource("2_re6s4")]
+position = Vector2(120, 520)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_vknke")
+x = 120
+y = 520
+def = 2
+
+[node name="Wrath02" parent="PlayerBuilder" instance=ExtResource("3_05tyy")]
+position = Vector2(180, 520)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_vknke")
+x = 180
+y = 520
+
+[node name="Wrath01" parent="PlayerBuilder" instance=ExtResource("2_yyxvu")]
+position = Vector2(240, 520)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_vknke")
+x = 240
+y = 520
 
 [node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("GM")]
 script = ExtResource("4_8cna3")
@@ -36,7 +69,6 @@ offset_right = 20.0
 offset_bottom = 88.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
-text = "0"
 
 [node name="StartButton" type="Button" parent="HUD"]
 anchors_preset = 7
@@ -64,7 +96,19 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
 text = "Your turn"
 
+[node name="BG" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -31.0
+offset_top = -38.0
+offset_right = 689.0
+offset_bottom = 762.0
+texture = ExtResource("5_hy1te")
+metadata/_edit_lock_ = true
+
+[node name="TurnDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="onGameOver" from="PlayerBuilder" to="." method="_on_player_builder_on_game_over"]
 [connection signal="next_turn" from="HUD" to="." method="_on_hud_next_turn"]
 [connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
-
-[editable path="AI"]

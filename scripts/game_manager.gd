@@ -1,34 +1,80 @@
 class_name Game_Manager extends Node
 
-@export var player_character: Player
 @export var ai_character: Enemies
+@export var playerBuilder: PlayerBuilder
+
 var current_character
 var game_over: bool = false
-var turn : int = 0
+var turn: int = 0
 
 func _ready() -> void:
-	print("player_character", player_character.transform.x)
+	print("ready")
+	
 
 func onGameOver():
 	game_over = true
 
-func nextTurn(): 
-	turn += 1
-	var pos
-	if(current_character == player_character):
-		current_character = ai_character
-		pos = player_character.position
-	else: 
-		current_character = player_character
+func nextTurn():
+	$TurnDelay.start()
+	if (turn > 30):
+		onGameOver()
+	var pos = {x = 0, y = 0}
+	if (isPlayerTurn()):
 		pos = ai_character.position
-	current_character._attack(pos)
-	print("current_character", pos)
+		var cPlayer = playerBuilder._attack({x = pos.x + 50, y = pos.y})
+		if (!cPlayer):
+			onGameOver()
+		ai_character._onBeingAttack()
+		ai_character.life = ai_character.life - (cPlayer.attackDmg - cPlayer.def)
+	else:
+		if (playerBuilder.current_character):
+			var cPlayer = playerBuilder.current_character
+			pos = cPlayer.position
+			cPlayer.life = ai_character.life - (ai_character.attackDmg - ai_character.def)
+			ai_character._attack({x = pos.x + 50, y = pos.y})
+			cPlayer._onBeingAttack()
+			if (!playerBuilder.current_character):
+				onGameOver()
+			if(ai_character.isDead):
+				onGameOver()
+	if(game_over != true):
+		turn += 1
+		await $TurnDelay.timeout
+		nextTurn(); ## kep going
+	
+
+func isPlayerTurn():
+	if (turn % 2):
+		return false
+	return true
+
 
 func _on_hud_next_turn() -> void:
-	nextTurn();
-	print("turn",turn)
-	$HUD.update_turn(turn)
-	if(turn % 2 ):
-		$HUD.show_message("Your Turn")
+	if (game_over != true):
+		print("game_over", game_over)
+		nextTurn();
+		$HUD.update_turn(turn)
+		if (turn % 2):
+			$HUD.show_message("Your Turn")
+		else:
+			$HUD.show_message("Enemies Turn")
 	else:
-		$HUD.show_message("Enemies Turn")
+		$HUD.show_game_over()
+
+
+func _on_player_on_dead() -> void:
+	print('_on_player_on_dead')
+	onGameOver()
+	$HUD.show_message("You Lose")
+
+
+func _on_ai_on_dead() -> void:
+	print('_on_ai_on_dead')
+	onGameOver()
+	$HUD.show_message("You Win")
+
+
+func _on_player_builder_on_game_over() -> void:
+	onGameOver()
+	_on_hud_next_turn()
+	pass # Replace with function body.

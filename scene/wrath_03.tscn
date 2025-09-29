@@ -1,0 +1,411 @@
+[gd_scene load_steps=90 format=3 uid="uid://gnhtdtb3j4sy"]
+
+[ext_resource type="Texture2D" uid="uid://cnx7ypujqr7cf" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_000.png" id="1_aowih"]
+[ext_resource type="Texture2D" uid="uid://mvjhxc20nd68" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_001.png" id="2_0khi7"]
+[ext_resource type="Texture2D" uid="uid://dficp0swhjq5k" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_002.png" id="3_0w8oy"]
+[ext_resource type="Texture2D" uid="uid://utqt6fyp3xra" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_003.png" id="4_h40jq"]
+[ext_resource type="Texture2D" uid="uid://dyfg18jachcou" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_004.png" id="5_mdpwf"]
+[ext_resource type="Texture2D" uid="uid://dslco12wvip4w" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_005.png" id="6_1pbbw"]
+[ext_resource type="Texture2D" uid="uid://cyxiqwxyt0bcs" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_006.png" id="7_8bahi"]
+[ext_resource type="Texture2D" uid="uid://dsjjpsyoprqhn" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_007.png" id="8_qgqn0"]
+[ext_resource type="Texture2D" uid="uid://dqrqrev10dj6o" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_008.png" id="9_tx2ke"]
+[ext_resource type="Texture2D" uid="uid://cm2p6d6grg3w5" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_009.png" id="10_c14bd"]
+[ext_resource type="Texture2D" uid="uid://cvc6llgmibt4d" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_010.png" id="11_g3fhj"]
+[ext_resource type="Texture2D" uid="uid://dpp8bi081rpt3" path="res://assets/characters/wrath/03/Attacking/Wraith_03_Attack_011.png" id="12_nhve4"]
+[ext_resource type="Texture2D" uid="uid://b1f4qqhuuc6b8" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_000.png" id="13_ti0g4"]
+[ext_resource type="Texture2D" uid="uid://dxsa6opfvclbq" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_001.png" id="14_yljmm"]
+[ext_resource type="Texture2D" uid="uid://cj3hhqtu6lf5" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_002.png" id="15_50hli"]
+[ext_resource type="Texture2D" uid="uid://bl8s30p03kvrp" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_003.png" id="16_5acg3"]
+[ext_resource type="Texture2D" uid="uid://clcdsg40f78nd" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_004.png" id="17_kcs8j"]
+[ext_resource type="Texture2D" uid="uid://camiunshkgtoi" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_005.png" id="18_q0w3l"]
+[ext_resource type="Texture2D" uid="uid://b82p0l8m8bqfw" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_006.png" id="19_du4a0"]
+[ext_resource type="Texture2D" uid="uid://d0bvqvkiybl8d" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_007.png" id="20_duib8"]
+[ext_resource type="Texture2D" uid="uid://bxdqblpgv5173" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_008.png" id="21_wxt6c"]
+[ext_resource type="Texture2D" uid="uid://dresffquugmca" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_009.png" id="22_8wovp"]
+[ext_resource type="Texture2D" uid="uid://bfbp4re6bi0c" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_010.png" id="23_etd0k"]
+[ext_resource type="Texture2D" uid="uid://d3ubnikydbu0i" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_011.png" id="24_bik7n"]
+[ext_resource type="Texture2D" uid="uid://rcrlqq63kaks" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_012.png" id="25_kmy2e"]
+[ext_resource type="Texture2D" uid="uid://c8n0enpknyifl" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_013.png" id="26_pgrr6"]
+[ext_resource type="Texture2D" uid="uid://b65t3kxvh2gau" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_014.png" id="27_x5x3s"]
+[ext_resource type="Texture2D" uid="uid://ctjkm5kls8r2w" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_015.png" id="28_ivw48"]
+[ext_resource type="Texture2D" uid="uid://cp8c71vdpsw1h" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_016.png" id="29_nacpl"]
+[ext_resource type="Texture2D" uid="uid://ebvrex6j4ibk" path="res://assets/characters/wrath/03/Casting Spells/Wraith_03_Casting Spells_017.png" id="30_t4s3w"]
+[ext_resource type="Texture2D" uid="uid://duq70ewtrqub3" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_000.png" id="31_ofq6t"]
+[ext_resource type="Texture2D" uid="uid://bq1r7celr1sdy" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_001.png" id="32_4ddeu"]
+[ext_resource type="Texture2D" uid="uid://ceut1iqwdpt0e" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_002.png" id="33_33u8c"]
+[ext_resource type="Texture2D" uid="uid://bocbwqts1dahc" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_003.png" id="34_o7puy"]
+[ext_resource type="Texture2D" uid="uid://bon8666233ck1" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_004.png" id="35_sgx5b"]
+[ext_resource type="Texture2D" uid="uid://bs84u8qk74ovj" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_005.png" id="36_rnpjr"]
+[ext_resource type="Texture2D" uid="uid://ckfa3sisx4e2w" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_006.png" id="37_prvcm"]
+[ext_resource type="Texture2D" uid="uid://bq3qbrtx5eav" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_007.png" id="38_fl54q"]
+[ext_resource type="Texture2D" uid="uid://bqugetgjpe0l" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_008.png" id="39_74jjr"]
+[ext_resource type="Texture2D" uid="uid://bj211lsgtsugp" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_009.png" id="40_fov4f"]
+[ext_resource type="Texture2D" uid="uid://ehbc41ssuia0" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_010.png" id="41_gu0rt"]
+[ext_resource type="Texture2D" uid="uid://0htc4ubd0q02" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_011.png" id="42_h4li4"]
+[ext_resource type="Texture2D" uid="uid://cg0f106afo7mh" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_012.png" id="43_4iefi"]
+[ext_resource type="Texture2D" uid="uid://57s5xkvx6g2b" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_013.png" id="44_4y4ry"]
+[ext_resource type="Texture2D" uid="uid://dasaptg6ifjoj" path="res://assets/characters/wrath/03/Dying/Wraith_03_Dying_014.png" id="45_eyiaf"]
+[ext_resource type="Texture2D" uid="uid://cxxfm65jmwb8g" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_000.png" id="46_66dae"]
+[ext_resource type="Texture2D" uid="uid://duk8lvuoa2dem" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_000.png" id="46_ti0g4"]
+[ext_resource type="Texture2D" uid="uid://dmrux7xpqw0oq" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_001.png" id="47_gi5ys"]
+[ext_resource type="Texture2D" uid="uid://ceco8korq3n7f" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_001.png" id="47_yljmm"]
+[ext_resource type="Texture2D" uid="uid://1yyaeky50yid" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_002.png" id="48_8ssh0"]
+[ext_resource type="Texture2D" uid="uid://bhpl45dr8tyrx" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_002.png" id="48_50hli"]
+[ext_resource type="Texture2D" uid="uid://dnh3txdom5ypo" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_003.png" id="49_4udna"]
+[ext_resource type="Texture2D" uid="uid://c1v2iccwpqln4" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_003.png" id="49_5acg3"]
+[ext_resource type="Texture2D" uid="uid://cq3xcqpvlw6cb" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_004.png" id="50_kcs8j"]
+[ext_resource type="Texture2D" uid="uid://cu8st0av17a55" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_004.png" id="50_xdd3u"]
+[ext_resource type="Texture2D" uid="uid://bh63y8c2l8o66" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_005.png" id="51_3r7i3"]
+[ext_resource type="Texture2D" uid="uid://bho46rqbs5o3f" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_005.png" id="51_q0w3l"]
+[ext_resource type="Texture2D" uid="uid://c5j8baeaewmb7" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_006.png" id="52_du4a0"]
+[ext_resource type="Texture2D" uid="uid://dgxynvm83xsbe" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_006.png" id="52_fpdeo"]
+[ext_resource type="Texture2D" uid="uid://jvytu78o2ho1" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_007.png" id="53_duib8"]
+[ext_resource type="Texture2D" uid="uid://be276i1e3lqtv" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_007.png" id="53_umnoo"]
+[ext_resource type="Texture2D" uid="uid://cnx6fo22kqfoy" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_008.png" id="54_nrwvo"]
+[ext_resource type="Texture2D" uid="uid://nvnhu7ftkg38" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_008.png" id="54_wxt6c"]
+[ext_resource type="Texture2D" uid="uid://cpauex6vupxrj" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_009.png" id="55_8wovp"]
+[ext_resource type="Texture2D" uid="uid://c4nf1xt38xgb1" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_009.png" id="55_y0tyu"]
+[ext_resource type="Texture2D" uid="uid://dg0bsmefa58tu" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_010.png" id="56_82w8v"]
+[ext_resource type="Texture2D" uid="uid://ceydcf6ih3jcj" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_010.png" id="56_etd0k"]
+[ext_resource type="Texture2D" uid="uid://dspnnxf2wqel6" path="res://assets/characters/wrath/03/Hurt/Wraith_03_Hurt_011.png" id="57_bik7n"]
+[ext_resource type="Texture2D" uid="uid://de3ercusg6cnt" path="res://assets/characters/wrath/03/Idle/Wraith_03_Idle_011.png" id="57_cex6s"]
+[ext_resource type="Texture2D" uid="uid://b7eeh74pbii7b" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_000.png" id="58_2ue2y"]
+[ext_resource type="Texture2D" uid="uid://brjpe3k2brdg" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_001.png" id="59_uw853"]
+[ext_resource type="Texture2D" uid="uid://d0pt4h8iie5l0" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_002.png" id="60_ankms"]
+[ext_resource type="Texture2D" uid="uid://cy506klg36ifs" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_003.png" id="61_gtmf0"]
+[ext_resource type="Texture2D" uid="uid://4kcaqptkaptb" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_004.png" id="62_16ugi"]
+[ext_resource type="Texture2D" uid="uid://dsp55soif343e" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_005.png" id="63_t2xxl"]
+[ext_resource type="Texture2D" uid="uid://bv512yiqsm5iw" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_006.png" id="64_yejs7"]
+[ext_resource type="Texture2D" uid="uid://cd0kyf8xu3p27" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_007.png" id="65_etbao"]
+[ext_resource type="Texture2D" uid="uid://dr3ovy6vey0d0" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_008.png" id="66_0yx2u"]
+[ext_resource type="Texture2D" uid="uid://cuqwcqxyfv15q" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_009.png" id="67_u0eyl"]
+[ext_resource type="Texture2D" uid="uid://dl3t42lckol5y" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_010.png" id="68_cke5q"]
+[ext_resource type="Texture2D" uid="uid://cyt8mhoxrvp63" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_011.png" id="69_sgsc7"]
+[ext_resource type="Texture2D" uid="uid://cxhv37bdbcycl" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_012.png" id="70_4pg45"]
+[ext_resource type="Texture2D" uid="uid://canpb662xlu1n" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_013.png" id="71_v3vfb"]
+[ext_resource type="Texture2D" uid="uid://bpn6h8nwvyy85" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_014.png" id="72_h16qw"]
+[ext_resource type="Texture2D" uid="uid://bo7uwpgjt6n2g" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_015.png" id="73_ebxkf"]
+[ext_resource type="Texture2D" uid="uid://d1f2u1ifmsu7i" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_016.png" id="74_lmv66"]
+[ext_resource type="Texture2D" uid="uid://8f210tcxcoxe" path="res://assets/characters/wrath/03/Taunt/Wraith_03_Taunt_017.png" id="75_r1cox"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gsr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aowih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0khi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0w8oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h40jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mdpwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1pbbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8bahi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qgqn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tx2ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c14bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g3fhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nhve4")
+}],
+"loop": true,
+"name": &"attacking",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ti0g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yljmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_50hli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5acg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kcs8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q0w3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_du4a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_duib8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wxt6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8wovp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_etd0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_bik7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kmy2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_pgrr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x5x3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ivw48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nacpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_t4s3w")
+}],
+"loop": true,
+"name": &"casting",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_ofq6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4ddeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_33u8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_o7puy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sgx5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_rnpjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_prvcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fl54q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_74jjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fov4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_gu0rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_h4li4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4iefi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_4y4ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_eyiaf")
+}],
+"loop": true,
+"name": &"dying",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_ti0g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_yljmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_50hli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_5acg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_kcs8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_q0w3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_du4a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_duib8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wxt6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_8wovp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_etd0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_bik7n")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_66dae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_gi5ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_8ssh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4udna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xdd3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_3r7i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_fpdeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_umnoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_nrwvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_y0tyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_82w8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_cex6s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_2ue2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_uw853")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ankms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_gtmf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_16ugi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_t2xxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_yejs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_etbao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_0yx2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_u0eyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_cke5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_sgsc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_4pg45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_v3vfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_h16qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ebxkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_lmv66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_r1cox")
+}],
+"loop": true,
+"name": &"taunt",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su0w1"]
+size = Vector2(216, 302)
+
+[node name="Wrath03" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8gsr2")
+animation = &"hurt"
+frame_progress = 0.6581461
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, -27)
+shape = SubResource("RectangleShape2D_su0w1")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="Life" type="Label" parent="."]
+offset_left = -125.0
+offset_top = -266.0
+offset_right = 89.0
+offset_bottom = -178.0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 64
