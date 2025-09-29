@@ -6,9 +6,11 @@ class_name Game_Manager extends Node
 var current_character
 var game_over: bool = false
 var turn: int = 0
+var chars
 
 func _ready() -> void:
 	print("ready")
+	spawnPlayer()
 	
 
 func onGameOver():
@@ -35,9 +37,9 @@ func nextTurn():
 			cPlayer._onBeingAttack()
 			if (!playerBuilder.current_character):
 				onGameOver()
-			if(ai_character.isDead):
+			if (ai_character.isDead):
 				onGameOver()
-	if(game_over != true):
+	if (game_over != true):
 		turn += 1
 		await $TurnDelay.timeout
 		nextTurn(); ## kep going
@@ -78,3 +80,15 @@ func _on_player_builder_on_game_over() -> void:
 	onGameOver()
 	_on_hud_next_turn()
 	pass # Replace with function body.
+
+
+func spawnPlayer():
+	chars = get_node("Characters").get_children(0)
+	chars[0].visible = true
+	chars[1].visible = true
+	chars[2].visible = true
+	playerBuilder.chars.insert(0, chars[0])
+	playerBuilder.chars.insert(1, chars[1])
+	playerBuilder.chars.insert(2, chars[2])
+	playerBuilder.maxIdx = 3
+	print("chars", playerBuilder.chars)

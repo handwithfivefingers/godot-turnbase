@@ -1,6 +1,4 @@
 class_name PlayerBuilder extends Node
-
-
 @export var chars: Array[Player]
 signal onGameOver
 
