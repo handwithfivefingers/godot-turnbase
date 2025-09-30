@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://d2iri64gubq8i"]
+[gd_scene load_steps=95 format=3 uid="uid://d2iri64gubq8i"]
 
 [ext_resource type="Texture2D" uid="uid://exreik8aksg6" path="res://assets/characters/wrath/02/Attacking/Wraith_02_Attack_000.png" id="1_6aalb"]
 [ext_resource type="Texture2D" uid="uid://ks3ogulkq5d5" path="res://assets/characters/wrath/02/Attacking/Wraith_02_Attack_001.png" id="2_ici8c"]
@@ -87,6 +87,7 @@
 [ext_resource type="Texture2D" uid="uid://dwq1ptlsrq1qa" path="res://assets/characters/wrath/02/Taunt/Wraith_02_Taunt_015.png" id="73_nh7n2"]
 [ext_resource type="Texture2D" uid="uid://b26s52d1x7uey" path="res://assets/characters/wrath/02/Taunt/Wraith_02_Taunt_016.png" id="74_ku5eg"]
 [ext_resource type="Texture2D" uid="uid://d28ka5tlyaj4r" path="res://assets/characters/wrath/02/Taunt/Wraith_02_Taunt_017.png" id="75_hmqsy"]
+[ext_resource type="Texture2D" uid="uid://hphve6nfpj4" path="res://assets/skills/slash.png" id="88_6vwod"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8gsr2"]
 animations = [{
@@ -385,6 +386,37 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su0w1"]
 size = Vector2(216, 302)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xfwe4"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_g2ffg"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tq61f"]
+width = 50
+curve = SubResource("Curve_g2ffg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5bsu5"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(100, 0, 0)
+emission_shape_scale = Vector3(0, 0, 1)
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+spread = 0.0
+initial_velocity_max = 164.79
+gravity = Vector3(0, 98, 0)
+scale_min = 13.2
+scale_max = 13.2
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_speed_curve = SubResource("CurveTexture_tq61f")
+
 [node name="Wrath02" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -407,3 +439,13 @@ offset_top = -267.0
 offset_right = 85.0
 offset_bottom = -179.0
 theme_override_font_sizes/font_size = 64
+
+[node name="BeSlashedEffect" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_xfwe4")
+emitting = false
+amount = 1
+texture = ExtResource("88_6vwod")
+lifetime = 2.0
+collision_base_size = 0.0
+visibility_rect = Rect2(-500, -500, 1000, 1000)
+process_material = SubResource("ParticleProcessMaterial_5bsu5")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource path="res://scripts/skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource("1")
+skillName = "Slash"
+skillDesc = "A blazing slash"
+skillDmg = 20
+skillCost = 100
+skillType = "attack"

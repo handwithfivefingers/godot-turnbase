@@ -18,3 +18,4 @@ class_name Enemies extends Player
 # 	isAttack = false
 # 	_switchAnimation("idle_left")
 # 	z_index = 0
+

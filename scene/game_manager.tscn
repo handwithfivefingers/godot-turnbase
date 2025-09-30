@@ -1,20 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctnl3cod44sav"]
+[gd_scene load_steps=12 format=3 uid="uid://ctnl3cod44sav"]
 
-[ext_resource type="Script" uid="uid://cbtnhe5agafbf" path="res://scripts/game_manager.gd" id="1_3c3go"]
-[ext_resource type="PackedScene" path="res://scene/wrath_03.tscn" id="2_re6s4"]
+[ext_resource type="Script" uid="uid://bmmschypj8xh3" path="res://scripts/gameManager.gd" id="1_4v7hy"]
+[ext_resource type="PackedScene" uid="uid://gnhtdtb3j4sy" path="res://scene/wrath_03.tscn" id="2_re6s4"]
 [ext_resource type="Script" uid="uid://c5sbml6bi3cc6" path="res://scripts/player_builder.gd" id="2_vknke"]
-[ext_resource type="PackedScene" path="res://scene/wrath_01.tscn" id="2_yyxvu"]
-[ext_resource type="PackedScene" path="res://scene/wrath_02.tscn" id="3_05tyy"]
+[ext_resource type="PackedScene" uid="uid://uhvo12kl0j4o" path="res://scene/wrath_01.tscn" id="2_yyxvu"]
+[ext_resource type="PackedScene" uid="uid://d2iri64gubq8i" path="res://scene/wrath_02.tscn" id="3_05tyy"]
 [ext_resource type="Script" uid="uid://57a6i15hxohx" path="res://scripts/enemies.gd" id="3_hy1te"]
 [ext_resource type="Script" uid="uid://c747jyc5jky36" path="res://scripts/player.gd" id="3_vknke"]
 [ext_resource type="Script" uid="uid://dmqnanbxjdp26" path="res://scripts/uiManager.gd" id="4_8cna3"]
 [ext_resource type="Texture2D" uid="uid://c2vq0a7s4kueu" path="res://assets/background/bg.jpg" id="5_hy1te"]
 [ext_resource type="PackedScene" uid="uid://d2yb8g6ry6clx" path="res://scene/mobs/golem_01.tscn" id="8_re6s4"]
+[ext_resource type="Script" uid="uid://bohl5hb65qqtw" path="res://scripts/turn_manage.gd" id="11_r8oq5"]
 
-[node name="GameManager" type="Node" node_paths=PackedStringArray("ai_character", "playerBuilder")]
-script = ExtResource("1_3c3go")
-ai_character = NodePath("MobBuilder/Golem01")
-playerBuilder = NodePath("PlayerBuilder")
+[node name="GameManager" type="Node" node_paths=PackedStringArray("player_builder")]
+script = ExtResource("1_4v7hy")
+player_builder = NodePath("PlayerBuilder")
 
 [node name="MobBuilder" type="Node" parent="."]
 
@@ -24,12 +24,18 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("3_hy1te")
 x = 400
 y = 480
-attackDmg = 40
-def = 6
 isEnemies = true
+attributes = {
+&"armour": 100,
+&"attackDmg": 20,
+&"energy": 50,
+&"evasion": 0,
+&"life": 100
+}
 
-[node name="PlayerBuilder" type="Node" parent="."]
+[node name="PlayerBuilder" type="Node" parent="." node_paths=PackedStringArray("chars")]
 script = ExtResource("2_vknke")
+chars = [NodePath("../Characters/Wrath01"), NodePath("../Characters/Wrath02")]
 
 [node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("GM")]
 script = ExtResource("4_8cna3")
@@ -89,32 +95,40 @@ one_shot = true
 [node name="Characters" type="Node" parent="."]
 
 [node name="Wrath03" parent="Characters" instance=ExtResource("2_re6s4")]
-visible = false
 position = Vector2(120, 520)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("3_vknke")
 x = 120
 y = 520
-attackDmg = 25
-def = 2
+attributes = {}
 
 [node name="Wrath02" parent="Characters" instance=ExtResource("3_05tyy")]
-visible = false
 position = Vector2(180, 520)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("3_vknke")
 x = 180
 y = 520
-attackDmg = 25
+attributes = {}
 
 [node name="Wrath01" parent="Characters" instance=ExtResource("2_yyxvu")]
-visible = false
 position = Vector2(240, 520)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("3_vknke")
 x = 240
 y = 520
-attackDmg = 26
+attributes = {
+&"armour": 20,
+&"attackDmg": 10,
+&"energy": 50,
+&"evasion": 0,
+&"life": 100
+}
+
+[node name="TurnManager" type="Node" parent="."]
+script = ExtResource("11_r8oq5")
+
+[node name="Delay" type="Timer" parent="TurnManager"]
+wait_time = 2.0
 
 [connection signal="onGameOver" from="PlayerBuilder" to="." method="_on_player_builder_on_game_over"]
 [connection signal="next_turn" from="HUD" to="." method="_on_hud_next_turn"]
